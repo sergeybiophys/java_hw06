@@ -15,7 +15,7 @@
 <div style="text-align: center">
     <h3>Fill the form</h3>
 </div>
-<div style="display: flex; width: 15%; margin: 0 auto; margin-top: 30px; background-color: palegreen; align-content: center;">
+<div style="display: flex; width: 15%; margin: 0 auto; margin-top: 30px; background-color: lightcoral;">
     <form method='post' action='/add'>
         <label>User: <input style="margin-top: 30px;"  name='username'/></label><br/>
         <label>Email: <input style="margin-left:1px; " name='email' type="email" /></label><br/>

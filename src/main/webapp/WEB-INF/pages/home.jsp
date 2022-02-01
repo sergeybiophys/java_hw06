@@ -15,7 +15,7 @@
 </head>
 <body>
 <div style="display: flex;  width: 60%; margin: 0 auto;
-    background-color: palegreen; height: 35px; justify-content: space-around;">
+    background-color: lightcoral; height: 35px; justify-content: space-around;">
     <div>ID</div>
     <div>USER NAME</div>
     <div>EMAIL</div>
