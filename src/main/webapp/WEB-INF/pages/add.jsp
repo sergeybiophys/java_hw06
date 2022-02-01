@@ -1,4 +1,5 @@
-<%--
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="sv.from.work.db.DbConnection" %><%--
   Created by IntelliJ IDEA.
   User: elekta
   Date: 01.02.2022
@@ -20,9 +21,21 @@
         <label>Email: <input style="margin-left:1px; " name='email' type="email" /></label><br/>
         <label>Age: <input style="margin-left:1px; " name='age' type="number" /></label><br/>
         <label>Group:
-            <select>
-                <option>VPU911</option>>
+            <select name="group">
+                <%
+                    ResultSet groups = DbConnection.getAllGroups();
+                    while (groups.next())
+                    {
+                        Integer id = groups.getInt("id");
+                        String name = groups.getString("name");
+                        out.println("<option value="+id+">"+name+"</option>");
+                    }
+                %>
             </select>
+
+<%--            <select>
+                <option>VPU911</option>>
+            </select>--%>
         </label>
   <%--      <label>Group: <input style="margin-left:25px; " name='group'/></label><br/>--%>
         <input value='ADD USER' style="margin-left:85px; margin-top: 30px; height: 30px; width: 100px; " type='submit'/>

@@ -10,31 +10,40 @@ public  class DbConnection {
 
 
 
-    public static ResultSet GetAll() throws SQLException {
+    public static ResultSet getAll() throws SQLException {
         ResultSet resultSet = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        
         java.sql.Connection conn = DriverManager.getConnection(URL, USER, PASS) ;
-            // Statement (PreparedStatement, CallableStatement)
 
             System.out.println("connected");
             Statement stmt = conn.createStatement();
-            //StringBuilder stringBuilder = new StringBuilder();
-            // DML query (insert, update, delete) - executeUpdate(sql)
-            // int count = stmt.executeUpdate("INSERT groups (name) values ('ВПД 911')");
-            // System.out.println("count = " + count);
-            // DQL query (select) - executeQuery(sql) -> ResultSet
-
              resultSet = stmt.executeQuery("SELECT * FROM `users`");
 
         return  resultSet;
     }
 
-    public static void CreateUser(String username,String email, Integer age){
+    public static ResultSet getAllGroups() throws SQLException
+    {
+        ResultSet resultSet = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        java.sql.Connection conn = DriverManager.getConnection(URL, USER, PASS) ;
+
+        System.out.println("connected");
+        Statement stmt = conn.createStatement();
+        resultSet = stmt.executeQuery("SELECT * FROM `groups`");
+
+        return  resultSet;
+    }
+
+    public static void createUser(String username,String email, Integer age, Integer groupNumber){
 
         ResultSet resultSet = null;
         try {
@@ -62,7 +71,7 @@ public  class DbConnection {
             }
 
             PreparedStatement pstmt2 = conn.prepareStatement("INSERT users_groups(group_id,user_id) values(?,?)");
-            pstmt2.setInt(1,1);
+            pstmt2.setInt(1,groupNumber);
             pstmt2.setInt(2,lastSet);
             pstmt2.executeUpdate();
 

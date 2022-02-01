@@ -38,9 +38,9 @@ public class AddFormServlet extends HttpServlet {
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         Integer age = Integer.parseInt(request.getParameter("age"));
-
+        Integer groupId = Integer.parseInt(request.getParameter("group"));
         //Student student = new Student(firstname, lastname, groupname);
-        DbConnection.CreateUser(username,email,age);
+        DbConnection.createUser(username,email,age,groupId);
         response.sendRedirect("/home");
     }
 

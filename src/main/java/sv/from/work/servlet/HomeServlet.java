@@ -78,7 +78,7 @@ public class HomeServlet extends HttpServlet {
         StringBuilder stringBuilder = new StringBuilder();
 
         try{
-            ResultSet resultSet = DbConnection.GetAll();
+            ResultSet resultSet = DbConnection.getAll();
             while(resultSet.next()) {
 
                 int id = resultSet.getInt("id");
