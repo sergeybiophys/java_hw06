@@ -33,11 +33,7 @@
                 %>
             </select>
 
-<%--            <select>
-                <option>VPU911</option>>
-            </select>--%>
         </label>
-  <%--      <label>Group: <input style="margin-left:25px; " name='group'/></label><br/>--%>
         <input value='ADD USER' style="margin-left:85px; margin-top: 30px; height: 30px; width: 100px; " type='submit'/>
     </form>
 </div>

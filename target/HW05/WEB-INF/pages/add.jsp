@@ -15,7 +15,7 @@
 <div style="text-align: center">
     <h3>Fill the form</h3>
 </div>
-<div style="display: flex; width: 15%; margin: 0 auto; margin-top: 30px; background-color: palegreen;">
+<div style="display: flex; width: 15%; margin: 0 auto; margin-top: 30px; background-color: palegreen; align-content: center;">
     <form method='post' action='/add'>
         <label>User: <input style="margin-top: 30px;"  name='username'/></label><br/>
         <label>Email: <input style="margin-left:1px; " name='email' type="email" /></label><br/>
@@ -33,11 +33,7 @@
                 %>
             </select>
 
-<%--            <select>
-                <option>VPU911</option>>
-            </select>--%>
         </label>
-  <%--      <label>Group: <input style="margin-left:25px; " name='group'/></label><br/>--%>
         <input value='ADD USER' style="margin-left:85px; margin-top: 30px; height: 30px; width: 100px; " type='submit'/>
     </form>
 </div>
