@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="java_hw05" />
         <module name="HW05" />
+        <module name="java_hw06" />
       </profile>
     </annotationProcessing>
   </component>

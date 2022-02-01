@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 public class AddFormServlet extends HttpServlet {
-    @Override
+  /*  @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         resp.setContentType("text/html");
@@ -30,5 +30,19 @@ public class AddFormServlet extends HttpServlet {
             Connection.CreateUser(req.getParameter("username"), req.getParameter("email"),Integer.parseInt(req.getParameter("age")));
         }
 
+    }*/
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+      request.getRequestDispatcher("/WEB-INF/pages/add.jsp").forward(request, response);
+  }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+  /*      String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        String groupname = request.getParameter("group");
+        Student student = new Student(firstname, lastname, groupname);
+        DataBase.CreateStudent(student);
+        response.sendRedirect("/home");*/
     }
+
 }

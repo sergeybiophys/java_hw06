@@ -15,7 +15,7 @@ import java.util.Enumeration;
 import java.util.HashSet;
 
 public class HomeServlet extends HttpServlet {
-    @Override
+    /*@Override
     public void init(ServletConfig config) throws ServletException {
         //super.init(config);
         System.out.println("Init HomeServlet");
@@ -75,5 +75,28 @@ public class HomeServlet extends HttpServlet {
     @Override
     public void destroy() {
         System.out.println("Destroy HomeServlet");
+    }*/
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+/*        StringBuilder stringBuilder = new StringBuilder();
+        for(Student item : DataBase.GetAll()) {
+
+            stringBuilder.append("<div style=\""+"display: flex; flex: wrap; width: 60%; margin: 0 auto; margin-top: 20px;  background-color: white; height: 35px; justify-content: space-around; border: 1px solid lightblue;\""+">");
+
+            stringBuilder.append("<div>"+item.getFirstName()+"</div>");
+            stringBuilder.append("<div>"+item.getLastName()+"</div>");
+            stringBuilder.append("<div>"+item.getGroupName()+"</div>");
+
+            stringBuilder.append("</div>");
+
+        }
+
+        req.setAttribute("stringHtml", stringBuilder);*/
+        req.getRequestDispatcher("/WEB-INF/pages/home.jsp").forward(req,resp);
+    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
     }
 }
