@@ -16,8 +16,9 @@
 </div>
 <div style="display: flex; width: 15%; margin: 0 auto; margin-top: 30px; background-color: palegreen;">
     <form method='post' action='/add'>
-        <label>User: <input style="margin-top: 30px;"  name='firstname'/></label><br/>
-        <label>Email: <input style="margin-left:1px; " name='lastname' /></label><br/>
+        <label>User: <input style="margin-top: 30px;"  name='username'/></label><br/>
+        <label>Email: <input style="margin-left:1px; " name='email' type="email" /></label><br/>
+        <label>Age: <input style="margin-left:1px; " name='age' type="number" /></label><br/>
         <label>Group:
             <select>
                 <option>VPU911</option>>

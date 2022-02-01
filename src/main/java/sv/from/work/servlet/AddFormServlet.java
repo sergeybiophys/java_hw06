@@ -1,5 +1,7 @@
 package sv.from.work.servlet;
 
+import sv.from.work.db.DbConnection;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,12 +35,13 @@ public class AddFormServlet extends HttpServlet {
   }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
-  /*      String firstname = request.getParameter("firstname");
-        String lastname = request.getParameter("lastname");
-        String groupname = request.getParameter("group");
-        Student student = new Student(firstname, lastname, groupname);
-        DataBase.CreateStudent(student);
-        response.sendRedirect("/home");*/
+        String username = request.getParameter("username");
+        String email = request.getParameter("email");
+        Integer age = Integer.parseInt(request.getParameter("age"));
+
+        //Student student = new Student(firstname, lastname, groupname);
+        DbConnection.CreateUser(username,email,age);
+        response.sendRedirect("/home");
     }
 
 }
